@@ -3,10 +3,6 @@ import { eachDayOfInterval, format, parse, startOfDay } from "date-fns";
 import useMeasure from "react-use-measure";
 import { useState } from "react";
 
-//MinRTT
-//MeanThroughputMbps
-//LossRate
-
 export default function Chart({}) {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
