@@ -5,7 +5,7 @@ import UADataView from "./Pages/UADataView";
 import ChartGen from "./Pages/ChartGen";
 import { Route, Routes } from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
     <>
       <Navbar />
@@ -20,5 +20,3 @@ function App() {
     </>
   );
 }
-
-export default App;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Documentation() {
+export default function Documentation() {
   return (
     <div>
       <h1>Documentation</h1>
@@ -56,5 +56,3 @@ function Documentation() {
     </div>
   );
 }
-
-export default Documentation;
