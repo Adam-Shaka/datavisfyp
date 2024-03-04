@@ -1,7 +1,7 @@
 import * as d3 from "d3";
-import { eachDayOfInterval, format, parseISO, startOfDay } from "date-fns";
+import { eachDayOfInterval, format, parse, startOfDay } from "date-fns";
 import useMeasure from "react-use-measure";
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 
 //MinRTT
 //MeanThroughputMbps
@@ -21,7 +21,7 @@ export default function Chart({}) {
     }
     d3.csv(URL.createObjectURL(file), function (d) {
       return {
-        date: parseISO(d.date),
+        date: parse(d.date, "dd/MM/yyyy", new Date()),
         MinRTT: +d.MinRTT,
         MeanThroughputMbps: +d.MeanThroughputMbps,
         LossRate: +d.LossRate,
