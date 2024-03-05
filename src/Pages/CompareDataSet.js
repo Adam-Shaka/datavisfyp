@@ -173,7 +173,7 @@ function ChartGen({ data, data2, width, height, selectedColumn }) {
             x2={width - margin.right}
             y2={yScale(tick)}
             stroke="black"
-            strokeDasharray="2,2"
+            strokeDasharray="5"
           />
         ))}
 
