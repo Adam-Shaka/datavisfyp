@@ -57,9 +57,25 @@ export default function Chart({}) {
           )}
         </div>
       </section>
+      <section className="download">
+        <button onClick={downloadGraph}>Download Graph</button>
+      </section>
     </div>
   );
 }
+
+const downloadGraph = () => {
+  var svg = document.querySelector("svg");
+  var svgData = new XMLSerializer().serializeToString(svg);
+  var svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
+  var svgUrl = URL.createObjectURL(svgBlob);
+  var downloadLink = document.createElement("a");
+  downloadLink.href = svgUrl;
+  downloadLink.download = "LineChart.svg";
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  document.body.removeChild(downloadLink);
+};
 
 function ChartGen({ data, width, height, selectedColumn }) {
   let margin = { top: 10, right: 100, bottom: 30, left: 100 };
