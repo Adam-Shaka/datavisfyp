@@ -23,7 +23,15 @@ export default function Chart({}) {
         LossRate: +d.LossRate,
       };
     }).then((data) => {
-      setData(data);
+      const groupedData = d3.group(data, (d) => format(d.date, "dd/MM/yyyy"));
+
+      const averagedData = Array.from(groupedData, ([date, values]) => ({
+        date: parse(date, "dd/MM/yyyy", new Date()),
+        MinRTT: d3.mean(values, (d) => d.MinRTT),
+        MeanThroughputMbps: d3.mean(values, (d) => d.MeanThroughputMbps),
+        LossRate: d3.mean(values, (d) => d.LossRate),
+      }));
+      setData(averagedData);
       setError(null);
     });
   };
