@@ -12,7 +12,9 @@ export default function Chart({}) {
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     if (file.type !== "text/csv") {
-      setError("Please upload a CSV file.");
+      setError(
+        "Please upload a CSV file. If unsure on what to use please refer to Documentation"
+      );
       return;
     }
     d3.csv(URL.createObjectURL(file), function (d) {

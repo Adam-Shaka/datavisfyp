@@ -9,12 +9,13 @@ export default function Home() {
             to generate charts to help visualise data gathered using NDT's.
           </p>
           <p>
-            The Line chart sections shows a visualisation of data collected in
-            regards to two counter offensive periods during the Ukraine war
+            Ukraine Data shows a visualisation of data collected in regards to
+            two counter offensive periods during the Ukraine war as well as a
+            comparison of the two.
           </p>
           <p>
-            The chart generation section should generate a line chart based of
-            user input if the correct data is given
+            The chart generation section will let you generate a line chart
+            based of your own data dowloaded from M-Lab's NDT test.
           </p>
           <p>
             The documentation section provides all documentation from how to

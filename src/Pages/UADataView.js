@@ -14,7 +14,9 @@ export default function UkraineDataViewer() {
       <button onClick={() => setChart("Chart2")}>
         Data from the 14/05/23 - 21/12/23
       </button>
-      <button onClick={() => setChart("Chart3")}>Comparison of data</button>
+      <button onClick={() => setChart("Chart3")}>
+        Comparison of both data sets
+      </button>
 
       {chart === "Chart1" && <Chart1 />}
       {chart === "Chart2" && <Chart2 />}
