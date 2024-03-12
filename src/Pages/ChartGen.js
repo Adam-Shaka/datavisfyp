@@ -11,9 +11,15 @@ export default function Chart({}) {
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
+    if (!file) {
+      setError(
+        "No file selected. If unsure on what to use please refer to Documentation."
+      );
+      return;
+    }
     if (file.type !== "text/csv") {
       setError(
-        "Please upload a CSV file. If unsure on what to use please refer to Documentation"
+        "Please upload a .CSV file. If unsure on what to use please refer to Documentation."
       );
       return;
     }
